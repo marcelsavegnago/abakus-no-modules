@@ -7,7 +7,7 @@
     'license': 'AGPL-3',
     'depends': [
         'sale_timesheet',
-        'project_type',
+        'project_type'
     ],
     'website': 'http://www.abakusitsolutions.eu',
     'category': 'Human Resource',
