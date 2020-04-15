@@ -12,12 +12,13 @@ class project_task_service_desk(models.Model):
 
     project_type = fields.Selection(related='project_id.project_type', string='Project Type', store=True)
 
-    def _get_default_project_id(self, cr, uid, context=None):
+    def _get_default_project_id(self):
         project_id = False
+        context = self.env.context
         if context is None:
             context = {}
         if 'default_analytic_account_id' in context:
-            analytic_account = self.pool.get('account.analytic.account').browse(cr, uid, context['default_analytic_account_id'], context=context)
+            analytic_account = self.env['account.analytic.account'].browse(context['default_analytic_account_id'])
             if analytic_account and len(analytic_account.project_ids) > 0:
                 project_id = analytic_account.project_ids[0]
             if analytic_account and len(analytic_account.subscription_ids) > 0:
@@ -27,34 +28,36 @@ class project_task_service_desk(models.Model):
             return project_id.id
         return False
 
-    def _get_default_stage_id(self, cr, uid, context=None):
+    def _get_default_stage_id(self):
         project_id = False
+        context = self.env.context
         if context is None:
             context = {}
         default_project_id = context.get('default_project_id')
         if default_project_id:
-            return self.stage_find(cr, uid, [], default_project_id, [('fold', '=', False)], context=context)
+            return self.stage_find(default_project_id, [('fold', '=', False)])
         if 'default_analytic_account_id' in context:
-            analytic_account = self.pool.get('account.analytic.account').browse(cr, uid, context['default_analytic_account_id'], context=context)
+            analytic_account = self.env['account.analytic.account'].browse(context['default_analytic_account_id'])
             if analytic_account and len(analytic_account.project_ids) > 0:
                 project_id = analytic_account.project_ids[0]
             if analytic_account and len(analytic_account.subscription_ids) > 0:
                 if analytic_account.subscription_ids[0].project_id:
                     project_id = analytic_account.subscription_ids[0].project_id
         if project_id != False:
-            return self.stage_find(cr, uid, [], default_project_id, [('fold', '=', False)], context=context)
+            return self.stage_find(default_project_id, [('fold', '=', False)])
         return False
 
-    def _get_default_partner(self, cr, uid, context=None):
+    def _get_default_partner(self):
+        context = self.env.context
         project_id = False
         if context is None:
             context = {}
         if 'default_project_id' in context:
-            project = self.pool.get('project.project').browse(cr, uid, context['default_project_id'], context=context)
+            project = self.env['project.project'].browse(context['default_project_id'])
             if project and project.partner_id:
                 return project.partner_id.id
         if 'default_analytic_account_id' in context:
-            analytic_account = self.pool.get('account.analytic.account').browse(cr, uid, context['default_analytic_account_id'], context=context)
+            analytic_account = self.env['account.analytic.account'].browse(context['default_analytic_account_id'])
             if analytic_account and len(analytic_account.project_ids) > 0:
                 project_id = analytic_account.project_ids[0]
             if analytic_account and len(analytic_account.subscription_ids) > 0:
@@ -65,7 +68,7 @@ class project_task_service_desk(models.Model):
         return False
 
     _defaults = {
-        'project_id': lambda s, cr, uid, c: s._get_default_project_id(cr, uid, context=c),
-        'stage_id': lambda s, cr, uid, c: s._get_default_stage_id(cr, uid, context=c),
-        'partner_id': lambda s, cr, uid, c: s._get_default_partner(cr, uid, context=c),
+        'project_id': lambda s: s._get_default_project_id(),
+        'stage_id': lambda s: s._get_default_stage_id(),
+        'partner_id': lambda s: s._get_default_partner(),
     }
