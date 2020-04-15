@@ -2,3 +2,8 @@
 	path = OCA/bank-payment
 	url = git@github.com:OCA/bank-payment.git
 	branch = 11.0
+
+[submodule "OCA/timesheet"]
+	path = OCA/timesheet
+	url = git@github.com:OCA/timesheet.git
+	branch = 11.0
