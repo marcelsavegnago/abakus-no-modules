@@ -18,7 +18,7 @@
                     <field name="type" widget="radio"/>
                 </xpath>
                 <xpath expr="//field[@name='user_id']" position="after">
-                    <field name="journal_id" domain="['|', ('type', '=', 'sale'), ('type', '=', 'purchase')]"/>
+                    <field name="journal_id" required="True" domain="['|', ('type', '=', 'sale'), ('type', '=', 'purchase')]"/>
                 </xpath>
                 <xpath expr="//field[@name='template_id']" position="after">
                     <field name="invoice_contract_type" attrs="{'invisible': [('type','!=','sale')]}"/>

@@ -34,7 +34,7 @@ class SaleSubscription(models.Model):
     use_project = fields.Boolean(string="Use Project")
     project_id = fields.Many2one('project.project', string="Project")
     contractual_factor = fields.Float(string="Contractual TS Factor", help="The time spent on timesheets will be multiplied by this number.", default=1)
-    journal_id = fields.Many2one('account.journal', string="Accounting Journal", required=True)
+    journal_id = fields.Many2one('account.journal', string="Accounting Journal")
 
     state = fields.Selection([('negociation','Negociation'),
                               ('draft','New'),
