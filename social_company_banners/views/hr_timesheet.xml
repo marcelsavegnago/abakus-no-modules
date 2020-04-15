@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+        <record model="ir.ui.view" id="timesheet_view_form_with_banner">
+            <field name="name">timesheet_view_form_with_banner</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="timesheet_grid.timesheet_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='project_id']" position="before">
+                    <field name="banner_text" readonly="1" nolabel="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
