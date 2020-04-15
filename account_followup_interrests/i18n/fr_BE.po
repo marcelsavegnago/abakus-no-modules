@@ -1,0 +1,189 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_followup_interrests
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e-20160901\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-27 14:07+0000\n"
+"PO-Revision-Date: 2016-09-28 09:25+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr_BE\n"
+"X-Generator: Poedit 1.8.9\n"
+
+#. module: account_followup_interrests
+#: code:addons/account_followup_interrests/model/account_followup_report.py:147
+#: code:addons/account_followup_interrests/model/account_followup_report.py:148
+#, python-format
+msgid " Date "
+msgstr "Date"
+
+#. module: account_followup_interrests
+#: code:addons/account_followup_interrests/model/account_followup_report.py:147
+#: code:addons/account_followup_interrests/model/account_followup_report.py:148
+#, python-format
+msgid " Due Date "
+msgstr "Date d'échéance"
+
+#. module: account_followup_interrests
+#: code:addons/account_followup_interrests/model/account_followup_report.py:148
+#, python-format
+msgid " Excluded "
+msgstr "Exclus"
+
+#. module: account_followup_interrests
+#: code:addons/account_followup_interrests/model/account_followup_report.py:148
+#, python-format
+msgid " Expected Date "
+msgstr "Date prévue"
+
+#. module: account_followup_interrests
+#: code:addons/account_followup_interrests/model/account_followup_report.py:147
+#: code:addons/account_followup_interrests/model/account_followup_report.py:148
+#, python-format
+msgid " Total Due "
+msgstr "Total dû"
+
+#. module: account_followup_interrests
+#: model:ir.model,name:account_followup_interrests.model_account_report_context_followup
+msgid "A particular context for the followup report"
+msgstr "Un contexte particulier pour le rapport de suivi"
+
+#. module: account_followup_interrests
+#: model:ir.model,name:account_followup_interrests.model_account_report_context_followup_all
+msgid "A progress bar for followup reports"
+msgstr "Une barre de progression pour le suivi des rapports"
+
+#. module: account_followup_interrests
+#: model:ir.model,name:account_followup_interrests.model_account_followup_followup
+msgid "Account Follow-up"
+msgstr "Relances comptables"
+
+#. module: account_followup_interrests
+#: code:addons/account_followup_interrests/model/account_followup_report.py:148
+#, python-format
+msgid "Allowance"
+msgstr "Indemnité"
+
+#. module: account_followup_interrests
+#: code:addons/account_followup_interrests/model/account_followup_report.py:127
+#, python-format
+msgid "Allowance Total"
+msgstr "Indemnité totale"
+
+#. module: account_followup_interrests
+#: code:addons/account_followup_interrests/model/account_followup_report.py:147
+#, python-format
+msgid "Allowances"
+msgstr "Indemnités"
+
+#. module: account_followup_interrests
+#: code:addons/account_followup_interrests/model/account_followup_report.py:147
+#: code:addons/account_followup_interrests/model/account_followup_report.py:148
+#, python-format
+msgid "Amount"
+msgstr "Montant"
+
+#. module: account_followup_interrests
+#: model:ir.model.fields,field_description:account_followup_interrests.field_account_move_line_payments_allowances
+msgid "Due allowances"
+msgstr "Indemnité due"
+
+#. module: account_followup_interrests
+#: model:ir.model.fields,field_description:account_followup_interrests.field_account_move_line_payments_interests
+msgid "Due interests"
+msgstr "Intérêts dus"
+
+#. module: account_followup_interrests
+#: model:ir.model,name:account_followup_interrests.model_account_followup_report
+msgid "Followup Report"
+msgstr "Rapport de relance"
+
+#. module: account_followup_interrests
+#: code:addons/account_followup_interrests/model/account_followup_report.py:147
+#: code:addons/account_followup_interrests/model/account_followup_report.py:148
+#, python-format
+msgid "Interests"
+msgstr "Intérêts"
+
+#. module: account_followup_interrests
+#: code:addons/account_followup_interrests/model/account_followup_report.py:115
+#, python-format
+msgid "Interests Total"
+msgstr "Intérêts totals"
+
+#. module: account_followup_interrests
+#: model:ir.model,name:account_followup_interrests.model_account_move_line
+msgid "Journal Items"
+msgstr "Écritures comptables"
+
+#. module: account_followup_interrests
+#: model:ir.model.fields,field_description:account_followup_interrests.field_account_move_line_late_days
+msgid "Late Days"
+msgstr "Jours de retard"
+
+#. module: account_followup_interrests
+#: model:ir.ui.view,arch_db:account_followup_interrests.account_followup_interest_form
+msgid "Late Interests"
+msgstr "Intérêts de retard"
+
+#. module: account_followup_interrests
+#: model:ir.model.fields,field_description:account_followup_interrests.field_account_followup_followup_late_allowance
+msgid "Late allowance"
+msgstr "Indemnité de retard"
+
+#. module: account_followup_interrests
+#: model:ir.model.fields,field_description:account_followup_interrests.field_account_followup_followup_late_interest_percentage
+msgid "Late interest (%)"
+msgstr "Intérêts de retard (%)"
+
+#. module: account_followup_interrests
+#: code:addons/account_followup_interrests/model/account_followup_report.py:147
+#: code:addons/account_followup_interrests/model/account_followup_report.py:148
+#, python-format
+msgid "Overdue days"
+msgstr "Jours échus"
+
+#. module: account_followup_interrests
+#: model:ir.model,name:account_followup_interrests.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: account_followup_interrests
+#: model:ir.model.fields,field_description:account_followup_interrests.field_res_partner_payments_sum_of_allowances
+msgid "Sum of due allowances"
+msgstr "Total des indemnités dues"
+
+#. module: account_followup_interrests
+#: model:ir.model.fields,field_description:account_followup_interrests.field_res_partner_payments_sum_of_interests
+msgid "Sum of due interests"
+msgstr "Total des intérêts dus"
+
+#. module: account_followup_interrests
+#: code:addons/account_followup_interrests/model/account_followup_report.py:138
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: account_followup_interrests
+#: code:addons/account_followup_interrests/model/account_followup_report.py:103
+#, python-format
+msgid "Total Due"
+msgstr "Total dû"
+
+#. module: account_followup_interrests
+#: code:addons/account_followup_interrests/model/account_followup_report.py:92
+#, python-format
+msgid "Total Overdue"
+msgstr "Total échu"
+
+#. module: account_followup_interrests
+#: model:ir.model.fields,field_description:account_followup_interrests.field_res_partner_payments_sum_due
+msgid "Total amount due"
+msgstr "Montant total dû"
