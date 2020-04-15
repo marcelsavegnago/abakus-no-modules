@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Projects Kanban -->
+    <record model="ir.ui.view" id="view_project_kanban_type">
+        <field name="name">project_type_view_kanban</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='o_primary']" position="after">
+                <div class="o_primary">
+                    <span><t t-esc="record.project_type"/></span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Projects Form -->
+    <record model="ir.ui.view" id="edit_project_type">
+        <field name="name">project_type_view_form</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='options_active']" position="after">
+                 <div name="project_info">
+                    <div>
+                        <label for="project_type" class="oe_inline"/>
+                        <field name="project_type" string="Project Type" class="oe_inline"/>
+                     </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
