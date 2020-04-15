@@ -7,3 +7,8 @@
 	path = OCA/timesheet
 	url = git@github.com:OCA/timesheet.git
 	branch = 11.0
+
+[submodule "abakus-it/abakus-private"]
+	path = abakus-it/abakus-private
+	url = git@github.com:abakus-it/abakus-private.git
+	branch = 11.0
