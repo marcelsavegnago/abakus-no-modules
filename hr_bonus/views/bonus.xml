@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_bonus_tree" model="ir.ui.view">
+        <field name="name">view_bonus_tree</field>
+        <field name="model">hr.bonus</field>
+        <field name="arch" type="xml">
+            <tree decoration-danger="state=='refused'"
+                  decoration-success="state=='approved'"
+                  decoration-info="state=='submitted'">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="employee_id"/>
+                <field name="date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_bonus_form" model="ir.ui.view">
+        <field name="name">view_bonus_form</field>
+        <field name="model">hr.bonus</field>
+        <field name="arch" type="xml">
+            <form string="Bonus">
+                <header>
+                    <button name="action_draft" states="submitted,refused" string="Set to draft" type="object"
+                            groups="base.group_user,base.group_hr_manager"/>
+                    <button name="action_submit" states="draft" string="Submit" type="object" class="oe_highlight"
+                            groups="base.group_user,base.group_hr_manager"/>
+                    <button name="action_approve" states="submitted,refused" string="Approve" type="object"
+                            class="oe_highlight" groups="base.group_hr_manager"/>
+                    <button name="action_refuse" states="submitted,approved" string="Refuse" type="object"
+                            groups="base.group_hr_manager"/>
+                    <button name="action_unlink" states="draft" string="Delete" type="object" groups="base.group_user"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,submitted,approved"
+                           statusbar_colors="{'submitted': 'blue','refused':'red'}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="date"/>
+                        </group>
+                        <group>
+                            <field name="employee_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
