@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="crm_lead_quotations">
+            <field name="name">crm.lead.quotations</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+                <!-- Quotations -->
+                <xpath expr="//notebook[last()]" position="inside">
+                    <page string="Quotations and Sales Order">
+                        <field context="{'default_partner_id': partner_id, 'default_message_follower_ids': message_follower_ids}" name="order_ids" />
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
